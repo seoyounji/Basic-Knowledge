@@ -1,6 +1,6 @@
-## **Array  VS  Dynamic Array  VS  LinkedList**
+### **Array  VS  Dynamic Array  VS  LinkedList**
 
-------------------
+***
 
 * Array
 
@@ -46,8 +46,7 @@
 
 ​             
 
-## **Stack  VS  Queue**
+### **Stack  VS  Queue**
 
---------------------------------
-
+***
 
