@@ -1,3 +1,5 @@
+***
+
 ### **Array  VS  Dynamic Array  VS  LinkedList**
 
 ***
@@ -44,7 +46,9 @@
 
 데이터 검색이 빈번하게 일어난다면 (Dynamic) Array를 사용할 것
 
-​             
+​            
+
+***
 
 ### **Stack  VS  Queue**
 
