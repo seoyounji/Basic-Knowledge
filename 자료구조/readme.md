@@ -100,7 +100,7 @@
 
 ​                  
 
-<img src="images/tree.jpg" title="tree" alt="tree"></img>
+<img src="images/tree.JPG" title="tree" alt="tree"></img>
 
 * 포화 이진 트리 (Full Binary Tree) : 모든 레벨이 무조건 꽉 찬 이진 트리. 따라서 높이가 h인 포화 이진 트리에 있는 노드의 수는 2^h - 1 이다. 
 * 완전 이진 트리 (Complete Binary Tree) : 왼쪽에서 오른쪽으로 차곡차곡 채워진 이진 트리. 노드의 수가 N개 일 때 완전 이진 트리의 높이는 log2(N)을 계산한 뒤 결과값이 정수가 아닌 경우 올림하면 된다.
