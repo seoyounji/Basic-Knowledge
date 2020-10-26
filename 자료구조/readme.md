@@ -226,23 +226,24 @@ rotation에는 single rotation과 double rotation이 있다. (BF가 2 이상이�
 
 ​                
 
-아래와 같은 상황이 주어질 때 4개의 상황에 따라 어떤 rotation을 써야할 지 보자. (U는 BF의 절대값이 2 이상이라 가정)            
+​                
+
+아래와 같은 상황이 주어질 때 4개의 상황에 따라 어떤 rotation을 써야할 지 정리해보자. (U는 BF의 절대값이 2 이상이라 가정)            
 
 <img src="images/exp1.JPG" title="tree" alt="tree"></img>
 
 * U의 왼쪽 자식 노드의 왼쪽 서브 트리인 A에 새 노드 삽입 : single right rotation
-
 * U의 왼쪽 자식 노드의 오른쪽 서브 트리인 B에 새 노드 삽입 : left-right double rotation
-
 * U의 오른쪽 자식 노드의 왼쪽 서브 트리인 C에 새 노드 삽입 : right-left double rotation
+* U의 오른쪽 자식 노드의 오른쪽 서브 트리인 D에 새 노드 삽입 : single left rotation  
 
-* U의 오른쪽 자식 노드의 오른쪽 서브 트리인 D에 새 노드 삽입 : single left rotation               
+​                   
 
-  ​            
+AVL tree는 BST의 일종이기 때문에 트리의 높이가 h라고 했을 때 삽입 연산의 시간 복잡도는 (BST의 시간 복잡도인 O(h) + BF 계산 시간 + rotation 수행 시간) 이 된다.            
 
-  AVL tree는 BST의 일종이기 때문에 트리의 높이가 h라고 했을 때 삽입 연산의 시간 복잡도는 (BST의 시간 복잡도인 O(h) + BF 계산 시간 + rotation 수행 시간) 이 된다.            
+BF 계산 시간은 O(h)이고, 기본적으로 linked list로 구현된 BST의 특성상 rotation은 부모 자식 관계만 변경해주면 되기 때문에 single rotation이든 double rotation이든   
 
-  BF 계산 시간은 O(h)이고, 기본적으로 linked list로 구현된 BST의 특성상 rotation은 부모 자식 관계만 변경해주면 되기 때문에 single rotation이든 double rotation이든       
+​                 
 
 ***
 
