@@ -241,7 +241,11 @@ rotation에는 single rotation과 double rotation이 있다. (BF가 2 이상이�
 
 AVL tree는 BST의 일종이기 때문에 트리의 높이가 h라고 했을 때 삽입 연산의 시간 복잡도는 (BST의 시간 복잡도인 O(h) + BF 계산 시간 + rotation 수행 시간) 이 된다.            
 
-BF 계산 시간은 O(h)이고, 기본적으로 linked list로 구현된 BST의 특성상 rotation은 부모 자식 관계만 변경해주면 되기 때문에 single rotation이든 double rotation이든   
+BF 계산 시간은 O(h)이고, 기본적으로 linked list로 구현된 BST의 특성상 rotation은 부모 자식 관계만 변경해주면 되기 때문에 single rotation이든 double rotation이든 O(1)이 된다.       
+
+즉 AVL tree의 삽입 연산의 시간 복잡도는 O(h)가 되는 것이다.      
+
+삭제 연산의 시간 복잡도 역시 같은 과정을 거쳐 O(h)가 되는데 노드 수가 N일 때 높이 h의 하한은 2log N이므로 AVL tree의 삽입, 삭제 시간 복잡도는 O(log N)이 된다.          
 
 ​                 
 
