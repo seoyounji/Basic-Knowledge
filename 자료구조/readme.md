@@ -174,20 +174,75 @@ linked list는 탐색에 소요되는 시간 복잡도는 O(N)이지만 삽입, 
 
 이 구조의 핵심 개념 중 하나가 바로 Balance Factor(BF) 인데 이는 (왼쪽 서브 트리의 높이 - 오른쪽 서브 트리의 높이) 이다. 서브 트리가 없는 leaf 노드의 경우 BF의 값이 0이고 값이 클수록 불균형 트리인 것이다.        
 
-아래 그림을 통해 더 자세히 알아보자.            
+아래 그림은 각 노드의 BF 값을 나타낸 예시이다.            
 
 <img src="images/AVL.JPG" title="tree" alt="tree"></img>
 
 AVL tree는 데이터를 삽입, 삭제하는 과정에서 BF가 일정 값 이상이나 이하로 바뀐 노드를 기준으로 그 서브 트리들의 위치를 rotation 하는 방식으로 트리의 균형을 맞춘다.       
 
-rotation에는 single rotation과 double rotation이 있다.       
+rotation에는 single rotation과 double rotation이 있다. (BF가 2 이상이거나 이하일 때 rotation을 실시한다고 가정)                   
 
 ​                  
 
 * single rotation
-  * 
+
+  *  X 라는 서브 트리에 데이터가 삽입되면 아래 그림처럼 되고 V와 U의 BF는 각각 1,2 가 된다.
+
+    <img src="images/single1.JPG" title="tree" alt="tree"></img>
+
+  * U가 rotation 조건에 부합하므로 U의 왼쪽 자식 노드인 V를 기준으로 single rotation을 실시하면 아래와 같아진다. Z를 잡아 당겨 내려서 V를 새로운 루트 노드로 만드는 것이다. (이 경우 single right rotation 이라 한다) 그렇게 되면 U와 V의 BF는 각각 0,0 이 된다.
+
+    <img src="images/single2.JPG" title="tree" alt="tree"></img>
+
+  * single right rotation을 일반화하면 아래와 같다.
+
+    <img src="images/single3.JPG" title="tree" alt="tree"></img>
+
+  * right 말고 left rotation도 있다. single left / right rotation을 직관적으로 나타내면 아래 그림과 같다.
+
+    <img src="images/single4.JPG" title="tree" alt="tree"></img>
+
+    ​              
+
+* double rotation
+
+  * rotation을 한번만 해서는 원하는 결과를 낼 수 없을 때는 2번 rotation 돌리면 된다.
+
+  * B 라는 서브 트리에 데이터가 삽입되면 아래 그림처럼 되고 U,V,W의 BF는 각각 2,-1,1이 된다. 따라서 U를 루트 노드로 하는 서브 트리가 재구성 대상이 된다.
+
+    <img src="images/double1.JPG" title="tree" alt="tree"></img>
+
+  * 일단 W를 중심으로 left roation을 수행해 A 서브 트리를 잡아 당겨 내려야 한다.
+
+  * 그 다음 다시 W를 중심으로 right rotation을 수행해 D 서브 트리를 잡아 당겨 내려야 한다.
+
+  * 그 결과는 아래와 같다.
+
+    <img src="images/double3.JPG" title="tree" alt="tree"></img>
+
+  * left-right double rotation을 일반화하면 아래와 같다.
+
+    <img src="images/double2.JPG" title="tree" alt="tree"></img>
 
 ​                
+
+아래와 같은 상황이 주어질 때 4개의 상황에 따라 어떤 rotation을 써야할 지 보자. (U는 BF의 절대값이 2 이상이라 가정)            
+
+<img src="images/exp1.JPG" title="tree" alt="tree"></img>
+
+* U의 왼쪽 자식 노드의 왼쪽 서브 트리인 A에 새 노드 삽입 : single right rotation
+
+* U의 왼쪽 자식 노드의 오른쪽 서브 트리인 B에 새 노드 삽입 : left-right double rotation
+
+* U의 오른쪽 자식 노드의 왼쪽 서브 트리인 C에 새 노드 삽입 : right-left double rotation
+
+* U의 오른쪽 자식 노드의 오른쪽 서브 트리인 D에 새 노드 삽입 : single left rotation               
+
+  ​            
+
+  AVL tree는 BST의 일종이기 때문에 트리의 높이가 h라고 했을 때 삽입 연산의 시간 복잡도는 (BST의 시간 복잡도인 O(h) + BF 계산 시간 + rotation 수행 시간) 이 된다.            
+
+  BF 계산 시간은 O(h)이고, 기본적으로 linked list로 구현된 BST의 특성상 rotation은 부모 자식 관계만 변경해주면 되기 때문에 single rotation이든 double rotation이든       
 
 ***
 
