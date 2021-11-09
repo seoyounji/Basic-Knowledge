@@ -96,6 +96,8 @@
 
 트리는 비선형 자료구조이며 루트 노드를 제외한 모든 노드는 단 하나의 부모 노드만을 가진다.             
 
+부모 노드(parent)  /  최상위 노드(root)  /  자식 노드(children)  /  자식이 없는 노드(leaf)        
+
 ​                  
 
 <img src="images/tree.jpg" title="tree" alt="tree"></img>
@@ -106,5 +108,19 @@
 ​            
 
 * 순회
+
   * 전위 순회 (preorder)
 
+    <img src="images/pre.JPG" title="tree" alt="tree"></img>
+
+  * 중위 순회 (inorder)
+
+    <img src="images/in.JPG" title="tree" alt="tree"></img>
+
+  * 후위 순회 (postorder)
+
+    <img src="images/post.JPG" title="tree" alt="tree"></img>
+
+​                 
+
+​                   
