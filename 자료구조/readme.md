@@ -358,3 +358,5 @@ Max heap을 만드는 max-heapify는 루트 노드의 값이 자식 노드보다
 
 ​                
 
+* HashMap : Map 인터페이스를 구현하기 위해 Hash Table 을 사용한 클래스로 key와 value에 null이 허용된다. 동기화를 지원하지 않는다.
+* HashTable : HashMap보다 속도는 느리지만 동기화를 지원하며 key와 value에 null이 허용되지 않는다.
